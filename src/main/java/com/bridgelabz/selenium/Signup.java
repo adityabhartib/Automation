@@ -44,7 +44,7 @@ public class Signup {
 
         Thread.sleep(2000);
 
-        driver.findElement(By.id("year")).sendKeys("1900");
+        driver.findElement(By.id("year")).sendKeys("1920");
 
         Thread.sleep(2000);
 
@@ -54,13 +54,7 @@ public class Signup {
 
         driver.findElement(By.name("websubmit")).click();
 
-
-
-
-
-
-
-
+        driver.close();
 
     }
 }
