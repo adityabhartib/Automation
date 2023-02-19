@@ -30,7 +30,7 @@ public class screenshotTest {
 
         File sourcefile =takesScreenshot.getScreenshotAs(OutputType.FILE);
 
-        File destinationFile =new File(System.currentTimeMillis()+"_screenshot.png");
+        File destinationFile =new File(".\\Screenshot\\"+System.currentTimeMillis()+"_screenshot.png");
 
         try {
             FileHandler.copy(sourcefile, destinationFile);
