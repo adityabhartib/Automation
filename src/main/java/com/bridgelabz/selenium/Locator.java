@@ -22,7 +22,7 @@ public class Locator {
 
         Thread.sleep(2000);
 
-        WebElement driverElement1=driver.findElement(By.name("email"));
+        WebElement driverElement1 = driver.findElement(By.name("email"));
 
         driverElement1.sendKeys("9812040783");
 
@@ -30,20 +30,26 @@ public class Locator {
 
 //        driverElement1.clear();
 
-        WebElement driverElement2=driver.findElement(By.cssSelector("#pass"));
+        WebElement driverElement2 = driver.findElement(By.cssSelector("#pass"));
 
         driverElement2.sendKeys("Aditya@120");
 
         Thread.sleep(2000);
 
-        WebElement driverElement3=driver.findElement(new By.ByTagName("button"));
+        WebElement driverElement3 = driver.findElement(new By.ByTagName("button"));
 
         driverElement3.click();
 
         Thread.sleep(10000);
 
-        driver.close();
+//        driver.close();
 
+        String actualUrl = driver.getCurrentUrl();
+        if (actualUrl.contains("https://mail.google.com/mail/u/0/#inbox")) {
+            System.out.println("Home page is displayed");
+        } else {
+            System.out.println("Home page is NOT displayed");
 
+        }
     }
 }
