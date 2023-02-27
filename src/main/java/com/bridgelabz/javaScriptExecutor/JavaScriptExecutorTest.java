@@ -11,17 +11,19 @@ public class JavaScriptExecutorTest {
 
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("D:\\IntelliJ IDEA\\CQA115\\src\\test\\java\\Test.html");
+        driver.get("D:\\IntelliJ IDEA\\CQA115\\src\\main\\resources\\Test.html");
 
         JavascriptExecutor javaScriptExecutor= (JavascriptExecutor) driver;
         Thread.sleep(3000);
 
-        driver.findElement(By.id("username")).sendKeys("Username");
+//        driver.findElement(By.id("username")).sendKeys("Username");
 
+        javaScriptExecutor.executeScript("document.getElementById('username').value='test'");
         Thread.sleep(3000);
 //        driver.findElement(By.id("password")).sendKeys("Password");
 
-//        javaScriptExecutor.executeScript()
+        javaScriptExecutor.executeScript("document.getElementById('password').value='Password'");
+        Thread.sleep(5000);
         driver.close();
 
 

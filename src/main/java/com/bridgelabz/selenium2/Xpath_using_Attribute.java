@@ -1,7 +1,6 @@
-package com.bridgelabz.pdf;
+package com.bridgelabz.selenium2;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Rectangle;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
