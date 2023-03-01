@@ -1,4 +1,4 @@
-package com.bridgelabz.selenium2;
+package com.bridgelabz.selenium;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

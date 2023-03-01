@@ -9,14 +9,29 @@ public class Current_url {
 
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("https://www.javatpoint.com/");
+        driver.get("http://www.google.com");
 
-        String actualUrl = driver.getCurrentUrl();
-        String expectedUrl = ("https://www.javatpoint.com/");
-        if (actualUrl.contains(expectedUrl)) {
-            System.out.println("Home page is displayed");
-        } else {
-            System.out.println("Home page is NOT displayed");
-        }
+        String title= driver.getTitle();
+        System.out.println("The tittle of this page is :"+title);
+
+        String Currenturl=driver.getCurrentUrl();
+        System.out.println("----------------");
+        System.out.println("This is the Current Url :"+Currenturl);
+
+        String source=driver.getPageSource();
+        System.out.println("----------------");
+        System.out.println("This is My Page Source :"+source);
+
+        Thread.sleep(3000);
+
+        String expected_tittle="Google";
+
+        if (title.contains(expected_tittle))
+            System.out.println("Home Page is Displayed");
+        else
+            System.out.println("Home Page is not Displayed");
+
+        driver.close();
+
     }
 }
