@@ -15,7 +15,7 @@ public class ChildWindowHandle {
         driver.manage().window().maximize();
         driver.get("https://www.naukri.com/");
 
-        Thread.sleep(10000);
+        Thread.sleep(1000);
 
         ChromeOptions options=new ChromeOptions();
         options.addArguments("--disable-notifications");
@@ -23,9 +23,9 @@ public class ChildWindowHandle {
         System.out.println("Parent Window handle Id :"+parentWindowHandleId);
         System.out.println("Parent Window Tittle: "+driver.getTitle());
 
-        Thread.sleep(5000);
+        Thread.sleep(10000);
 
-        driver.findElement(By.xpath("//span[contains(text(),'MNC')]")).click();
+        driver.findElement(By.xpath("//span[contains(text(),'Remote')]")).click();
 
         options.addArguments("--disable-notifications");
         Set<String> windowHandles = driver.getWindowHandles();
@@ -36,10 +36,10 @@ public class ChildWindowHandle {
             if (!windowHandle.equals(parentWindowHandleId)) {
                 firstChildWindow = windowHandle;
                 driver.switchTo().window(windowHandle);
-                Thread.sleep(8000);
-                driver.findElement(By.xpath("///a[contains(text(),'EY_Skill development')]")).click();
-                Thread.sleep(4000);
-                // driver.close();
+                Thread.sleep(10000);
+                driver.findElement(By.xpath("//a[contains(text(),'Met')]")).click();
+                Thread.sleep(1000);
+//                 driver.close();
             }
         }
         Set<String> allWindowHandles = driver.getWindowHandles();
@@ -51,11 +51,11 @@ public class ChildWindowHandle {
             if (!allWindowHandle.equals(parentWindowHandleId)) {
                 if (allWindowHandle.equals(firstChildWindow)) {
                     driver.switchTo().window(firstChildWindow);
-                    driver.close();
+//                    driver.close();
                 } else if (!allWindowHandle.equals(firstChildWindow)) {
                     driver.switchTo().window(allWindowHandle);
-                    Thread.sleep(2000);
-                    driver.close();
+                    Thread.sleep(10000);
+//                    driver.close();
                 }
             }
             /* to close parent window */
