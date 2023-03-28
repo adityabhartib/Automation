@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.List;
 
-public class FindElement {
+public class FindElements {
     public static void main(String[] args) {
         WebDriverManager.chromedriver().setup();
 

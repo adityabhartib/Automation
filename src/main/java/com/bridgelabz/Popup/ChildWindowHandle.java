@@ -1,5 +1,6 @@
 package com.bridgelabz.Popup;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -9,12 +10,15 @@ import java.util.Set;
 
 public class ChildWindowHandle {
     public static void main(String[] args) throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "D:\\Driver\\chromedriver.exe");
+        WebDriverManager.chromedriver().setup();
 
-        WebDriver driver = new ChromeDriver();
+        ChromeOptions chromeOptions=new ChromeOptions();
+
+        chromeOptions.addArguments("--remote-allow-origins=*");
+        WebDriver driver=new ChromeDriver(chromeOptions);
+
         driver.manage().window().maximize();
         driver.get("https://www.naukri.com/");
-
         Thread.sleep(1000);
 
         ChromeOptions options=new ChromeOptions();
@@ -61,7 +65,7 @@ public class ChildWindowHandle {
             /* to close parent window */
             else if (allWindowHandle.equals(parentWindowHandleId)) {
                 driver.switchTo().window(parentWindowHandleId);
-                //  driver.close();
+                  driver.close();
             }
         }
 
